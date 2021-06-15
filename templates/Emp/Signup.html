@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "Emp/template.html" %}
+{%block body%}
+
+    <div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        <div class="fieldWrapper">
+        {% csrf_token %}
+        <h4>{{form.as_p}}</h4>
+        <h4>{{form1.as_p}}</h4>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+    </div>
+{%endblock%}

@@ -1,0 +1,7 @@
+#model attributes
+
+1.Employee id -auto gen
+2.Employee name
+3.Employee Email
+4.Employee Pass
+5.Employee Profile(portfolio) with url as employee id

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%extends "Emp/template.html" %}
+<!-- {% block style%}
+<style></style>
+{%endblock%} -->
+{%block body%}
+
+<div class="row">
+  <div class="col-11 text-center my-3">
+    <img src="/media/{{profilePic}}" height="140px" width="350px" />
+  </div>
+  <div class="col-1"></div>
+  <hr />
+  <div class="col-12">
+    <table class="text-start mx-auto my-4">
+      <tr>
+        <td><strong>NAME: </strong></td>
+        <td>&nbsp;{{name}}</td>
+      </tr>
+      <tr>
+        <td><strong>EMAIL: </strong></td>
+        <td>&nbsp;{{email}}</td>
+      </tr>
+      <tr>
+        <td><strong>FB URL: </strong></td>
+        <td>&nbsp;<a href="{{fburl}}" target="_blank">{{fburl}}</a></td>
+      </tr>
+      <tr>
+        <td><strong>LinkedIn URL: </strong></td>
+        <td>&nbsp;<a href="{{lkurl}}" target="_blank">{{lkurl}}</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+{%endblock%}

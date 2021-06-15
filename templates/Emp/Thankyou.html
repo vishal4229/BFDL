@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "Emp/template.html" %} {%block body%}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Hey,There</h1>
+    <p class="lead">Thank for Registering</p>
+    <hr class="my-4" />
+    <p>
+      <span style="color: red; font-size: x-large"
+        >Your Employee id is <span style="color: blue">{{emp_id}}</span></span
+      ><br />
+      <small>Please note it for further reference</small>
+    </p>
+    <button class="btn btn-primary btn-lg">Login</button>
+  </div>
+</div>
+{%endblock%}
