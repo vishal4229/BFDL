@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic import View, ListView, DetailView, TemplateView
+from django.views.generic import View, ListView, DetailView, TemplateView, CreateView, UpdateView
 from . import forms
 from .models import Emp, Emp_Profile
 from django.forms import ValidationError
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
+from .serializers import EmpSerializer
+from rest_framework.generics import ListAPIView
+from rest_framework.generics import CreateAPIView
+from rest_framework.generics import DestroyAPIView
+from rest_framework.generics import UpdateAPIView
 
 
 def index(request):
@@ -15,9 +21,9 @@ def index(request):
 emp_id = 0
 
 
-def user_logout(request):
-    logout(request)
-    return redirect('/login')
+# def user_logout(request):
+#     logout(request)
+#     return redirect('/login')
 
 
 def register(request):
@@ -124,3 +130,14 @@ def login1(request):
             raise forms.ValidationError("User does not exist")
 
     return render(request, 'Emp/login.html', {'form': lg})
+
+
+class EmpViewSet(viewsets.ModelViewSet):
+    queryset = Emp.objects.all().order_by('emp_id')
+    serializer_class = EmpSerializer
+
+
+class UpdateEmpAPIView(UpdateAPIView):
+
+    queryset = Emp.objects.all()
+    serializer_class = EmpSerializer
